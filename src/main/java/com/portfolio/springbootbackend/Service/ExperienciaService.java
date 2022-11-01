@@ -22,18 +22,21 @@ public class ExperienciaService implements IExperienciaService {
     }
 
     @Override
-    public void crearExperiencia(Experiencia exp) {
-           expRepo.save(exp);
+    public Experiencia registrarExp(Experiencia exp) {
+           return expRepo.save(exp);
     }
+    
 
     @Override
-    public void borrarExperiencia(Long id) {
+    public void eliminarExp(Long id) {
         expRepo.deleteById(id);
     }
 
+    
+
     @Override
-    public Experiencia buscarExperiencia(Long id) {
-        return expRepo.findById(id).orElse(null);
+    public Experiencia actualizarExp(Experiencia exp) {
+     return expRepo.save(exp);
     }
     
    

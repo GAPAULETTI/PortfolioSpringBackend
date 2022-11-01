@@ -8,7 +8,8 @@ import java.util.List;
 public interface IExperienciaService {
    
     public List <Experiencia> verExperiencia();
-    public void crearExperiencia (Experiencia exp);
-    public void borrarExperiencia (Long id);
-    public Experiencia buscarExperiencia (Long id);
-}
+    Experiencia registrarExp(Experiencia exp);
+    Experiencia actualizarExp(Experiencia exp);
+    public void eliminarExp (Long id);
+    
+} 

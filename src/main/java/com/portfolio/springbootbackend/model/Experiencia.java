@@ -1,34 +1,45 @@
 
 package com.portfolio.springbootbackend.model;
 
+
+import com.fasterxml.jackson.annotation.JsonFormat;
+import java.io.Serializable;
+
 import java.util.Date;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
-public class Experiencia {
+@Table(name="experiencia")
+public class Experiencia implements Serializable {
     @Id
+    @Column
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+    @Column
     private String cargo;
+    @Column
     private String empresa;
+    @Column
     private String ciudad;
+    @Column
+    @JsonFormat(pattern = "yyyy-MM-dd")
     private Date inicio;
+    @Column 
+    @JsonFormat(pattern = "yyyy-MM-dd")
     private Date finalizacion;
+    @Column
     private String tareasRealizadas;
+          
 
     public Experiencia() {
     }
 
-    public Experiencia(Long id, String cargo, String empresa, String ciudad, String tareasRealizadas) {
-        this.id = id;
-        this.cargo = cargo;
-        this.empresa = empresa;
-        this.ciudad = ciudad;
-        this.tareasRealizadas = tareasRealizadas;
-    }
+    
     
 
     public Experiencia(Long id, String cargo, String empresa, String ciudad, Date inicio, Date finalizacion, String tareasRealizadas) {
